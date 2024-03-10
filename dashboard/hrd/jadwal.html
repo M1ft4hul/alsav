@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css" />
         <!-- Theme CSS -->
         <link rel="stylesheet" href="../../assets/css/theme.min.css" />
-        <title>Trainer Account | HRD</title>
+        <title>Trainer's Class Schedule | HRD</title>
     </head>
 
     <body class="bg-light">
@@ -42,13 +42,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link has-arrow active" href="akun_trainer.html">
+                            <a class="nav-link has-arrow" href="akun_trainer.html">
                                 <i data-feather="users" class="nav-icon icon-xs me-2"></i>
                                 Trainer Account
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link has-arrow" href="jadwal.html">
+                            <a class="nav-link has-arrow active" href="jadwal.html">
                                 <i data-feather="calendar" class="nav-icon icon-xs me-2"></i>
                                 Trainer Class Schedules
                             </a>
@@ -112,40 +112,91 @@
                                 <h1 class="display-4">Layouts</h1>
                                 <p>Customize your overview page layout. Choose the one that best fits your needs.</p>
                             </div> -->
-                            <h3 style="font-weight: 700">Trainer Account</h3>
+                            <h3 style="font-weight: 700">Trainer Class Schedules</h3>
                             <hr />
                         </div>
                     </div>
                     <!-- tabel kelas -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1">
+                    <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary mb-5">
                         <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
-                        Make Account
-                    </button>
+                        Make Schedules
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card shadow-lg p-3 mb-5 bg-white rounded-3">
+                            <div class="card-body">
+                                <!-- Validation Form -->
+                                <h3 style="font-weight: 700">Buat Jadwal</h3>
+                                <hr />
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <!-- Input -->
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="textInput">Hari</label>
+                                        <input type="text" id="textInput" class="form-control" placeholder="input hari" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="textInput">Tanggal</label>
+                                        <input type="date" id="textInput" class="form-control" placeholder="input tanggal" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="validationCustom04" class="form-label">Kelas</label>
+                                        <select class="form-select" id="validationCustom04" required>
+                                            <option selected disabled value="">Pilih Kelas</option>
+                                            <option>UI/UX</option>
+                                            <option>Mobile Developer</option>
+                                            <option>Pemprograman Laravel</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a valid state.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="validationCustom04" class="form-label">Trainer</label>
+                                        <select class="form-select withBSselect" id="validationCustom04" required>
+                                            <option selected disabled value="">Pilih Trainer</option>
+                                            <option>private</option>
+                                            <option>reguler</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a valid state.</div>
+                                    </div>
+
+                                    <!-- Button Block -->
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button type="button" class="btn btn-success">
+                                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                                <polyline points="7 3 7 8 15 8"></polyline>
+                                            </svg>
+                                            Buat jadwal
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <div class="mt-5">
                         <div class="table-responsive">
                             <table id="example" class="table table-striped" style="width: 100%">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Kode</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Nama</th>
-                                        <th scope="col">Password</th>
-                                        <th scope="col">Level</th>
-                                        <th scope="col">Salary</th>
+                                        <th scope="col">Kode Jadwal</th>
+                                        <th scope="col">Kelas</th>
+                                        <th scope="col">Trainer</th>
+                                        <th scope="col">Hari</th>
+                                        <th scope="col">Tanggal</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>TO1</th>
+                                        <th>JO1</th>
                                         <td>UI/UX</td>
                                         <td>Okta Mada</td>
-                                        <td>Beginner</td>
+                                        <td>Senin</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -168,12 +219,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T02</th>
+                                        <th>J02</th>
                                         <td>Pemrograman Laravel</td>
                                         <td>Miftahul Jannah</td>
-                                        <td>Expert</td>
+                                        <td>Selasa</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -196,12 +246,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T03</th>
+                                        <th>J03</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Rabu</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -224,12 +273,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T04</th>
+                                        <th>J04</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Kamis</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -252,12 +300,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T05</th>
+                                        <th>J05</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Kamis</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -280,12 +327,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T05</th>
+                                        <th>J05</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Kamis</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -308,12 +354,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T06</th>
+                                        <th>J06</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Jumat</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -336,12 +381,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T07</th>
+                                        <th>J07</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Sabtu</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -364,12 +408,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T07</th>
+                                        <th>J07</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Senin</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -392,12 +435,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T19</th>
+                                        <th>J19</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Senin</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -420,12 +462,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T10</th>
+                                        <th>J10</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Selasa</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -448,12 +489,11 @@
                                     </tr>
 
                                     <tr>
-                                        <th>T12</th>
+                                        <th>J12</th>
                                         <td>Frontend</td>
                                         <td>the Bird</td>
-                                        <td>Intermediet</td>
+                                        <td>Selasa</td>
                                         <td>13/05/2024</td>
-                                        <td>Intermediet</td>
                                         <td>
                                             <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
@@ -535,74 +575,6 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Ya, Batal</button>
                                     <button type="button" class="btn btn-success">
-                                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-                                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
-                                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
-                                            <polyline points="7 3 7 8 15 8"></polyline>
-                                        </svg>
-                                        Simpan
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end -->
-
-                    <!-- modal tambah -->
-                    <div class="modal fade gd-example-modal-lg" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalCenterTitle">Make Trainer Account</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr data-dt-row="99" data-dt-column="2">
-                                                <td>Kode:</td>
-                                                <td>
-                                                    <input type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                                                </td>
-
-                                                <td>Username:</td>
-                                                <td>
-                                                    <input type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                                                </td>
-                                            </tr>
-                                            <tr data-dt-row="99" data-dt-column="4">
-                                                <td>Nama:</td>
-                                                <td>
-                                                    <input type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                                                </td>
-
-                                                <td>Password:</td>
-                                                <td>
-                                                    <input type="password" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                                                </td>
-                                            </tr>
-                                            <tr data-dt-row="99" data-dt-column="3">
-                                                <td>Level:</td>
-                                                <td>
-                                                    <select class="form-select" id="validationCustom04" required>
-                                                        <option selected disabled value="">Choose Level</option>
-                                                        <option>Beginner</option>
-                                                        <option>Intermediet</option>
-                                                        <option>Expert</option>
-                                                    </select>
-                                                    <div class="invalid-feedback">Please select a valid state.</div>
-                                                </td>
-
-                                                <td>Salary:</td>
-                                                <td>
-                                                    <input type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Ya, Batal</button>
-                                    <button type="button" class="btn btn-primary">
                                         <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
                                             <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                                             <polyline points="17 21 17 13 7 13 7 21"></polyline>

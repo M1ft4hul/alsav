@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css" />
         <!-- Theme CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="../../assets/css/theme.min.css" />
         <title>Trainer's Class Schedule | HRD</title>
     </head>
@@ -152,12 +153,25 @@
                                         </select>
                                         <div class="invalid-feedback">Please select a valid state.</div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <!-- <div class="col-md-4">
                                         <label for="validationCustom04" class="form-label">Trainer</label>
                                         <select class="form-select withBSselect" id="validationCustom04" required>
                                             <option selected disabled value="">Pilih Trainer</option>
                                             <option>private</option>
                                             <option>reguler</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a valid state.</div>
+                                    </div> -->
+                                    <div class="col-md-4">
+                                        <label for="validationCustom04" class="form-label">Trainer</label>
+                                        <select class="select2 select2-hidden-accessible" style="width: 100%" tabindex="-1" aria-hidden="true">
+                                            <option selected disabled value="">Pilih Trainer</option>
+                                            <option>Miftahul Jannah</option>
+                                            <option>Samsul Ma'arif</option>
+                                            <option>Okta Mada</option>
+                                            <option>Nirwana</option>
+                                            <option>Siti Zahra</option>
+                                            <option>Muh Ikmal</option>
                                         </select>
                                         <div class="invalid-feedback">Please select a valid state.</div>
                                     </div>
@@ -596,6 +610,7 @@
         <script defer src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script defer src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
         <script defer src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
         <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
         <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
